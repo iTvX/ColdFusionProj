@@ -1,15 +1,4 @@
-create table Advisor
-(
-    SubjectId    int         not null
-        primary key,
-    Subject_Name varchar(45) not null,
-    DepartmentId int         not null,
-    constraint Advisor_Department_DepartmentId_fk
-        foreign key (DepartmentId) references Department (DepartmentId)
-);
-
-
-create table Classroom
+create table if not exists Classroom
 (
     ClassroomId    int         not null
         primary key,
@@ -19,38 +8,7 @@ create table Classroom
     Location       int         not null
 );
 
-
-create table Classroom_Course
-(
-    Classromm_ClassroomId int not null,
-    CourseCourseId        int not null,
-    primary key (Classromm_ClassroomId, CourseCourseId),
-    constraint Classroom_Course_Classroom_ClassroomId_fk
-        foreign key (Classromm_ClassroomId) references Classroom (ClassroomId),
-    constraint Classroom_Course_Course_CourseId_fk
-        foreign key (CourseCourseId) references Course (CourseId)
-);
-
-
-create table Course
-(
-    CourseId              int not null
-        primary key,
-    Course_Name           int not null,
-    Seats_Avaliable       int null,
-    professor_ProfessorId int null,
-    SubjectId             int null,
-    CourseScheduledId     int null,
-    constraint Course_Course_Schedule_CourseScheduled_fk
-        foreign key (CourseScheduledId) references Course_Schedule (CourseScheduled),
-    constraint Course_Professors_ProfessorId_fk
-        foreign key (professor_ProfessorId) references Professors (ProfessorId),
-    constraint Course_Subject_SubjectId_fk
-        foreign key (SubjectId) references Subject (SubjectId)
-);
-
-
-create table Course_Schedule
+create table if not exists Course_Schedule
 (
     CourseScheduled int         not null
         primary key,
@@ -59,8 +17,17 @@ create table Course_Schedule
     Time_End        time        not null
 );
 
+create table if not exists Manager
+(
+    ManagerId  int         not null
+        primary key,
+    First_Name varchar(45) null,
+    Last_Name  varchar(45) null,
+    Phone      varchar(45) null,
+    Address    varchar(45) null
+);
 
-create table Department
+create table if not exists Department
 (
     DepartmentId int         not null
         primary key,
@@ -71,8 +38,17 @@ create table Department
         foreign key (ManagerId) references Manager (ManagerId)
 );
 
+create table if not exists Advisor
+(
+    SubjectId    int         not null
+        primary key,
+    Subject_Name varchar(45) not null,
+    DepartmentId int         not null,
+    constraint Advisor_Department_DepartmentId_fk
+        foreign key (DepartmentId) references Department (DepartmentId)
+);
 
-create table Major
+create table if not exists Major
 (
     MajorName    varchar(45) not null
         primary key,
@@ -83,19 +59,7 @@ create table Major
         foreign key (DepartmentId) references Department (DepartmentId)
 );
 
-
-create table Manager
-(
-    ManagerId  int         not null
-        primary key,
-    First_Name varchar(45) null,
-    Last_Name  varchar(45) null,
-    Phone      varchar(45) null,
-    Address    varchar(45) null
-);
-
-
-create table Professors
+create table if not exists Professors
 (
     ProfessorId int         not null
         primary key,
@@ -106,8 +70,7 @@ create table Professors
     Address     varchar(30) null
 );
 
-
-create table Students
+create table if not exists Students
 (
     StudentsId               int         not null
         primary key,
@@ -121,8 +84,7 @@ create table Students
     Address                  varchar(20) not null
 );
 
-
-create table Students_Course
+create table if not exists Students_Course
 (
     Studnets_StudnetId int not null,
     CourseCourseId     int not null,
@@ -136,8 +98,7 @@ create table Students_Course
 create index Students_Course_Studnets_StudnetId_index
     on Students_Course (Studnets_StudnetId);
 
-
-create table Students_Major
+create table if not exists Students_Major
 (
     Students_StudentId int         not null,
     Major_MajorName    varchar(45) not null,
@@ -154,8 +115,7 @@ create index Students_Major_Major_MajorName_index
 create index Students_Major_Students_StudentId_index
     on Students_Major (Students_StudentId);
 
-
-create table Subject
+create table if not exists Subject
 (
     SubjectId    int         not null
         primary key,
@@ -165,8 +125,35 @@ create table Subject
         foreign key (DepartmentId) references Department (DepartmentId)
 );
 
+create table if not exists Course
+(
+    CourseId              int not null
+        primary key,
+    Course_Name           int not null,
+    Seats_Avaliable       int null,
+    professor_ProfessorId int null,
+    SubjectId             int null,
+    CourseScheduledId     int null,
+    constraint Course_Course_Schedule_CourseScheduled_fk
+        foreign key (CourseScheduledId) references Course_Schedule (CourseScheduled),
+    constraint Course_Professors_ProfessorId_fk
+        foreign key (professor_ProfessorId) references Professors (ProfessorId),
+    constraint Course_Subject_SubjectId_fk
+        foreign key (SubjectId) references Subject (SubjectId)
+);
 
-create table Subject_Professors
+create table if not exists Classroom_Course
+(
+    Classromm_ClassroomId int not null,
+    CourseCourseId        int not null,
+    primary key (Classromm_ClassroomId, CourseCourseId),
+    constraint Classroom_Course_Classroom_ClassroomId_fk
+        foreign key (Classromm_ClassroomId) references Classroom (ClassroomId),
+    constraint Classroom_Course_Course_CourseId_fk
+        foreign key (CourseCourseId) references Course (CourseId)
+);
+
+create table if not exists Subject_Professors
 (
     Subject_SubjectId      int not null,
     Professors_ProfessorId int not null,
@@ -177,16 +164,14 @@ create table Subject_Professors
         foreign key (Subject_SubjectId) references Subject (SubjectId)
 );
 
-
-create table Titles
+create table if not exists Titles
 (
     TitleId int         not null
         primary key,
     Type    varchar(45) not null
 );
 
-
-create table Titles_Professors
+create table if not exists Titles_Professors
 (
     Titles_TitleId         int not null,
     Professors_ProfessorId int not null,
