@@ -1,0 +1,16 @@
+INSERT INTO college.Advisor (AdvisorId, First_Name, Last_Name, Phone, Address) VALUES (1, 'Jack', 'Lee', '2024123123', 'aadsf');
+INSERT INTO college.Classroom (ClassroomId, Classroom_Name, Buildings, Capacity, Location) VALUES (1, 'Cat', 'Myers', 25, 3780);
+INSERT INTO college.Classroom_Course (Classromm_ClassroomId, CourseCourseId) VALUES (1, 1);
+INSERT INTO college.Course (CourseId, Course_Name, Seats_Avaliable, professor_ProfessorId, SubjectId, CourseScheduledId) VALUES (1, 'High Level Math', 25, 1, 1, 1);
+INSERT INTO college.Course_Schedule (CourseScheduled, Meeting_Day, Time_Start, Time_End) VALUES (1, 'MF', '15:00:00', '16:00:00');
+INSERT INTO college.Department (DepartmentId, Name, AdvisorId, ManagerId) VALUES (1, 'CAS', 1, 1);
+INSERT INTO college.Major (MajorName, Minimum_GPA, DepartmentId) VALUES ('Computer Science', 2.8, 1);
+INSERT INTO college.Manager (ManagerId, First_Name, Last_Name, Phone, Address) VALUES (1, 'Jerry', 'Smith', '2022342141', '167 Pooh Bear Lane');
+INSERT INTO college.Professors (ProfessorId, First_Name, Last_Name, Email, Phone, Address) VALUES (1, 'Drew', 'Owen', 'sdafad@gmail.com', '234224121', '746 Sunburst Drive');
+INSERT INTO college.Students (StudentsId, First_Name, Last_Name, Country, Age, Phone, Email, Expacted_graduation_year, Address) VALUES (1, 'Bruce', 'Smith', 'U.S.', 21, '2424234134', 'werwea@gmail.com', '2021-04-09', '1085 Thunder Road');
+INSERT INTO college.Students_Course (Studnets_StudnetId, CourseCourseId) VALUES (1, 1);
+INSERT INTO college.Students_Major (Students_StudentId, Major_MajorName) VALUES (1, 'Computer Science');
+INSERT INTO college.Subject (SubjectId, Subject_Name, DepartmentId) VALUES (1, 'CSC', 1);
+INSERT INTO college.Subject_Professors (Subject_SubjectId, Professors_ProfessorId) VALUES (1, 1);
+INSERT INTO college.Titles (TitleId, Type) VALUES (1, 'PH. D');
+INSERT INTO college.Titles_Professors (Titles_TitleId, Professors_ProfessorId) VALUES (1, 1);

@@ -1,3 +1,13 @@
+create table if not exists Advisor
+(
+    AdvisorId  int         not null
+        primary key,
+    First_Name varchar(45) not null,
+    Last_Name  varchar(45) not null,
+    Phone      varchar(45) null,
+    Address    varchar(45) null
+);
+
 create table if not exists Classroom
 (
     ClassroomId    int         not null
@@ -34,26 +44,17 @@ create table if not exists Department
     Name         varchar(45) null,
     AdvisorId    int         null,
     ManagerId    int         null,
+    constraint Department_Advisor_AdvisorId_fk
+        foreign key (AdvisorId) references Advisor (AdvisorId),
     constraint Department_Manager_ManagerId_fk
         foreign key (ManagerId) references Manager (ManagerId)
-);
-
-create table if not exists Advisor
-(
-    SubjectId    int         not null
-        primary key,
-    Subject_Name varchar(45) not null,
-    DepartmentId int         not null,
-    constraint Advisor_Department_DepartmentId_fk
-        foreign key (DepartmentId) references Department (DepartmentId)
 );
 
 create table if not exists Major
 (
     MajorName    varchar(45) not null
         primary key,
-    Department   int         null,
-    Minimum_GPA  int         not null,
+    Minimum_GPA  float       not null,
     DepartmentId int         null,
     constraint Major_Department_DepartmentId_fk
         foreign key (DepartmentId) references Department (DepartmentId)
@@ -127,13 +128,13 @@ create table if not exists Subject
 
 create table if not exists Course
 (
-    CourseId              int not null
+    CourseId              int         not null
         primary key,
-    Course_Name           int not null,
-    Seats_Avaliable       int null,
-    professor_ProfessorId int null,
-    SubjectId             int null,
-    CourseScheduledId     int null,
+    Course_Name           varchar(45) not null,
+    Seats_Avaliable       int         null,
+    professor_ProfessorId int         null,
+    SubjectId             int         null,
+    CourseScheduledId     int         null,
     constraint Course_Course_Schedule_CourseScheduled_fk
         foreign key (CourseScheduledId) references Course_Schedule (CourseScheduled),
     constraint Course_Professors_ProfessorId_fk
