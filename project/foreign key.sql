@@ -1,0 +1,1 @@
+set @@global.foreign_key_checks = 0;
