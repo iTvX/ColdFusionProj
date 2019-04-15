@@ -1,6 +1,6 @@
-<cfquery name="findcustomer" datasource="BankDatabase" dbtype="ODBC">
+<cfquery name="findcustomer" datasource="college" dbtype="ODBC">
 
-select * from customer where customer_name='#customer_name#'
+select * from Students where First_name='#First_Name#'
 
 </cfquery>
 
@@ -19,16 +19,24 @@ select * from customer where customer_name='#customer_name#'
 <cfif findcustomer.RecordCount gt 0>
 
 <Cfoutput query="findcustomer">
-
-
-Customer's Name:
-<input name=customer_name type=text value=#customer_name#>
 
-Customer's Street:
-<input name=customer_street type=text value=#customer_street#>
 
-Customer's City:
-<input name=customer_city type=text value=#customer_city#>
+
+
+Customer's Name:
+
+<input name=customer_name type=text value=#First_name#>
+
+
+Customer's Street:
+
+<input name=customer_street type=text value=#Address#>
+
+
+Customer's City:
+
+<input name=customer_city type=text value=#Email#>
+
 <br><br>
 
 
@@ -43,9 +51,12 @@ Customer's City:
 
 
 
-
-<P align=center></p>
-<P align=center><A href="http://localhost:8500/CSC570WebDB/SampleWebSite.htm">Back to Home</A></P>
+
+
+<P align=center></p>
+
+<P align=center><A href="http://localhost:8500/CSC570WebDB/SampleWebSite.htm">Back to Home</A></P>
+
 
 
 </Body>
