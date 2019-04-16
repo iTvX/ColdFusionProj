@@ -41,19 +41,35 @@
 
 
 <CENTER>
-    <h1> Add Customer: </h1>
+    <h1> Add Student: </h1>
 
 
     <FORM action="http://localhost:8500/CSC570WebDB/addcustomer.cfm" method="post">
 
-        Customer Name:
-        <input name="customer_name" type="text">
+        StudentId:
+        <input name="StudentId" type="text" value="10" >
 
-        Customer Street:
-        <input name="customer_street" type="text">
+        First Name:
+        <input name="First_Name" type="text">
 
-        Customer City:
-        <input name="customer_city" type="text">
+        Last Name:
+        <input name="Last_Name" type="text">
+
+        Country:
+        <input name="Country" type="text">
+
+        Age:
+        <input name="Age" type="text">
+
+        Phone:
+        <input name="Phone" type="text">
+        Email:
+        <input name="Email" type="text">
+        expected_graduation_year:
+        <input name="expected_graduation_year" type="text" value="2021-04-09" >
+        Address:
+        <input name="Address" type="text">
+
 
 
         <INPUT type=submit value=Submit>
@@ -63,17 +79,17 @@
 
     <center>
 
-        <h1> Delete Customer:</h1>
+        <h1> Delete Student:</h1>
 
 
         <FORM action=http://localhost:8500/CSC570WebDB/deletecustomer.cfm method=post>
 
 
-            Customer's Name:
+            Student's ID:
 
-            <input name=customer_name>
+            <input name=StudentsId>
 
-            <input name=submit type=submit value="Delete Customer">
+            <input name=submit type=submit value="Delete Student">
 
         </form>
 
@@ -85,11 +101,11 @@
             <FORM action="http://localhost:8500/CSC570WebDB/updatefindcustomer.cfm" method="post">
 
 
-                Customer's Name:
+                Student's Name:
 
-                <input name=customer_name>
+                <input name=first_name>
+                <input name=submit type=submit value="Update Students">
 
-                <input name=submit type=submit value="Update Customer">
 
             </form>
 
