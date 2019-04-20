@@ -1,4 +1,4 @@
-<cfquery name="findcustomerquery" datasource="college" dbtype="ODBC" >
+<cfquery name="findstudetnsquery" datasource="college" dbtype="ODBC" >
 
     select * from students where first_name= '#first_name#'
 
@@ -12,11 +12,11 @@
 
 <font size="+8">Updating Student's Record:</font> <br> <br>
 
-<cfif findcustomerquery.RecordCount gt 0>
+<cfif findstudetnsquery.RecordCount gt 0>
 
-    <Cfoutput query="findcustomerquery">
+    <Cfoutput query="findstudetnsquery">
 
-        <FORM action=http://localhost:8500/CSC570WebDB/updateupdatecustomer.cfm method=post>
+        <FORM action=http://localhost:8500/CSC570WebDB/updateupdatestudent.cfm method=post>
 
 
             First Name:

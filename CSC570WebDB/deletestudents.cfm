@@ -8,7 +8,7 @@ delete from students where studentsId='#StudentsId#'
 <h1> Student has been deleted</h1><br>
 <P align=center></p>
 
-<P align=center><A href="http://localhost:8500/CSC570WebDB/SampleWebSite.htm">Back to Home</A></P>
+<P align=center><A href="http://localhost:8500/CSC570WebDB/myCollegeDB.html">Back to Home</A></P>
 
 
 </Body>

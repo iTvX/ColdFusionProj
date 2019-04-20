@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zijie's College Database</title>
+    <link href="my.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="logo">
+    <img src="mylogo.png" alt="logo" height="150px" width="220px"/>
+</div>
+
+<div class="coldfusion">
+    <h1>view Student List</h1>
+    <a href="http://localhost:8500/CSC570WebDB/viewStudents.cfm">View Student List</a>
+
+    <h1> Add Student: </h1>
+
+
+    <form action="http://localhost:8500/CSC570WebDB/addstudents.cfm" method="post">
+
+        StudentId:
+        <input name="StudentId" type="text" value="10">
+
+        First Name:
+        <input name="First_Name" type="text">
+
+        Last Name:
+        <input name="Last_Name" type="text">
+
+        Country:
+        <input name="Country" type="text">
+
+        Age:
+        <input name="Age" type="text">
+
+        Phone:
+        <input name="Phone" type="text">
+        Email:
+        <input name="Email" type="text">
+        expected_graduation_year:
+        <input name="expected_graduation_year" type="text" value="2021-04-09">
+        Address:
+        <input name="Address" type="text">
+
+        <input type=submit value=Submit>
+    </form>
+    <h1> Delete Student:</h1>
+
+
+    <form action=http://localhost:8500/CSC570WebDB/deletestudents.cfm method=post>
+
+
+        Student's ID:
+
+        <input name=StudentsId>
+
+        <input name=submit type=submit value="Delete Student">
+
+    </form>
+
+
+    <h1> Update Students </h1>
+
+
+    <form action="http://localhost:8500/CSC570WebDB/updatefindstudent.cfm" method="post">
+
+
+        Student's Name:
+
+        <input name=first_name>
+        <input name=submit type=submit value="Update Students">
+
+
+    </form>
+
+</div>
+
+</body>
+</html>

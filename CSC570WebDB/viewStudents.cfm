@@ -20,7 +20,7 @@ Country: #Country# &nbsp;&nbsp;&nbsp;&nbsp;
 
 <P align=center></p>
 
-<P align=center><A href="http://localhost:8500/CSC570WebDB/SampleWebSite.htm">Back to Home</A></P>
+<P align=center><A href="http://localhost:8500/CSC570WebDB/myCollegeDB.html">Back to Home</A></P>
 
 
 
