@@ -6,7 +6,7 @@
 
 
 <Head>
-    <title> Bank Database </title>
+    <title> college Database </title>
 </Head>
 <Body>
 
