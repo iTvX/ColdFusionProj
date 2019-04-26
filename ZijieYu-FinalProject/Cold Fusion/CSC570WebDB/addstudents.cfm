@@ -5,7 +5,7 @@
 
 
 <Head>
-    <title> Add Customer </title>
+    <title> Add Students </title>
 </Head>
 <Body>
 <h1> Student has been dadded</h1><br>
